@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metro Movie - Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="nf-container">
+    
+    <div class="nf-image-header">
+        <img src="logo.png" alt="Metro Movies Logo" class="form-header-img">
+    </div>
+    
+    <h2>Register</h2>
+    <p>Create a new account to watch your favorite series.</p>
+
+    <form id="signupForm">
+      
+      <div class="field">
+        <div class="input-wrap">
+          <input type="text" id="name" placeholder="Full name" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="input-wrap">
+          <input type="email" id="email" placeholder="Email address" required>
+        </div>
+        <div id="emailError" class="msg error" style="display:none;"></div>
+      </div>
+
+      <div class="field">
+        <div class="input-wrap password-container"> 
+            <input type="password" id="password" placeholder="Password" required autocomplete="new-password"> 
+            
+            <span class="toggle-password" id="hidePasswordIcon">
+                <img src="eye-close.png" alt="Hide Password" class="password-icon"> 
+            </span>
+
+            <span class="toggle-password hidden" id="showPasswordIcon">
+                <img src="eye-open.png" alt="Show Password" class="password-icon"> 
+            </span>
+        </div>
+        <div id="passwordError" class="msg error" style="display:none;"></div>
+      </div>
+
+      <div class="field">
+        <div class="field">
+    <div class="input-wrap"> 
+        <input type="password" id="confirmPassword" placeholder="Confirm password" required autocomplete="new-password">
+        
+        <span class="toggle-password" id="hideConfirmIcon">
+            <img src="eye-close.png" alt="Hide Confirm Password" class="password-icon">
+        </span>
+
+        <span class="toggle-password hidden" id="showConfirmIcon">
+            <img src="eye-open.png" alt="Show Confirm Password" class="password-icon">
+        </span>
+    </div>
+    <div id="confirmError" class="msg error" style="display:none;"></div>
+</div>
+        <div id="confirmError" class="msg error" style="display:none;"></div>
+      </div>
+
+      <button type="submit" class="nf-btn">Create Account</button>
+      <div id="result" class="msg"></div>
+      
+      <div class="form-footer-link">
+        <p>Already have an account? <a href="../LoginForm/metromovies-loginform.html">Log In here</a></p> 
+      </div>
+    </form>
+  </div>
+  <script src="/SignupForm/script.js"></script>
+  </body>
+</html>
