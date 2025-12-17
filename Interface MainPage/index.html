@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Movies</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script> 
+</head>
+<body>
+    
+    <header class="site-header">
+        <div class="container nav">
+            
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="PrimeStream Logo" class="site-logo">
+                </a>
+            </div>
+            <div class="brand">
+                <nav class="primary-nav">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">TV Shows</a>
+                    <a href="#" class="nav-link">Movies</a>
+                    <a href="#" class="nav-link">Latest</a>
+                    <a href="#" class="nav-link">My List</a>
+                </nav>
+                <div class="nav-actions">
+                    <button class="icon-btn" aria-label="Search" title="Search">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn" aria-label="Notifications" title="Notifications">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                            <path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2z"></path>
+                        </svg>
+                    </button>
+                    
+                  <a href="../WhosWatching /profile.html" class="profile-link" aria-label="My Profile" title="My Profile">
+                        <img src="images/Leonardo.jpeg" alt="User Profile Image" class="avatar-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-media"></div>
+            <div class="container hero-content">
+                <h1 class="hero-logo">Frankenstein</h1> <p class="hero-tagline">I'm Captain Anderson. This is Dr. Udsen.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">
+                        <span class="btn-icon">▶</span>
+                        Play
+                    </button>
+                    <button class="btn btn-secondary">
+                        <span class="btn-icon">ℹ</span>
+                        More Info
+                    </button>
+                </div>
+                <div class="hero-meta">
+                    <span class="chip">16+</span>
+                    <span class="chip">HD</span>
+                    <span class="chip">5.1</span>
+                </div>
+            </div>
+            <div class="hero-fade"></div>
+        </section>
+
+        <section class="content-rows">
+            
+            <div class="category-wrapper">
+                <section class="category-row">
+                    <h2>We Think You'll Love These</h2>
+                    <div class="poster-container" id="love-these-row">
+                        
+                        <div class="poster-item">
+                            <img src="./images/poster-stranger-things.png" alt="Stranger Things" class="poster">
+                            <p class="poster-title">Stranger Things</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-how-i-met-your-mother.png" alt="Stranger Things" class="poster">
+                            <p class="poster-title">How I Met Your Mother</p>
+                            </div>
+                        <div class="poster-item">
+                            <img src="./images/posters-rookie.png" alt="Rookie" class="poster">
+                            <p class="poster-title">The Rookie</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-frankenstein.png" alt="Frankenstein" class="poster">
+                            <p class="poster-title">Frankenstein</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-money-heist.png" alt="Money Heist" class="poster">
+                            <p class="poster-title">Money Heist</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-breaking-bad.png" alt="Breaking Bad" class="poster">
+                            <p class="poster-title">Breaking Bad</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/posters-bad-boys.png" alt="Bad Boys" class="poster">
+                            <p class="poster-title">Bad Boys</p>
+                        </div>
+                    </div>
+                </section>
+                <button class="scroll-btn left" onclick="scrollContent('love-these-row', -1)"> &lt; </button>
+                <button class="scroll-btn right" onclick="scrollContent('love-these-row', 1)"> &gt; </button>
+            </div>
+            
+            <div class="category-wrapper">
+                <section class="category-row">
+                    <h2>Your Next to Watch</h2>
+                     <div class="poster-container" id="next-watch-row">
+                        
+                        <div class="poster-item">
+                            <img src="./images/poster-dexter.png" alt="Dexter" class="poster">
+                            <p class="poster-title">Dexter</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-lupin.png" alt="Lupin" class="poster">
+                            <p class="poster-title">Lupin</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-friends.jpg" alt="Young Sheldon" class="poster">
+                            <p class="poster-title">Friends</p>
+                            </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-young-sheldon.png" alt="Young Sheldon" class="poster">
+                            <p class="poster-title">Young Sheldon</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/posters-suits.png" alt="Suits" class="poster">
+                            <p class="poster-title">Suits</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-shameless.png" alt="Shameless" class="poster">
+                            <p class="poster-title">Shameless</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-carmelo.png" alt="Caramelo" class="poster">
+                            <p class="poster-title">Caramelo</p>
+                        </div>
+                    </div>
+                </section>
+                <button class="scroll-btn left" onclick="scrollContent('next-watch-row', -1)"> &lt; </button>
+                <button class="scroll-btn right" onclick="scrollContent('next-watch-row', 1)"> &gt; </button>
+            </div>
+
+            <div class="category-wrapper">
+                <section class="category-row">
+                    <h2>Crime TV Shows/Movies</h2>
+                    <div class="poster-container" id="crime-shows-row">
+                        
+                        <div class="poster-item">
+                            <img src="./images/poster-snowfall.png" alt="Snowfall" class="poster">
+                            <p class="poster-title">Snowfall</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-peaky-blinders.png" alt="Peaky Blinders" class="poster">
+                            <p class="poster-title">Peaky Blinders</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-the-god-father.jpg" alt="Peaky Blinders" class="poster">
+                            <p class="poster-title"> The GodFather</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-scarface.jpg" alt="Peaky Blinders" class="poster">
+                            <p class="poster-title"> Scarface </p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-better-call-saul.jpg" alt="Better Call Saul" class="poster">
+                            <p class="poster-title">Better Call Saul</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/poster-blacklist.png" alt="The Blacklist" class="poster">
+                            <p class="poster-title">The Blacklist</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/posters-wednesday.png" alt="Wednesday" class="poster">
+                            <p class="poster-title">Wednesday</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/posters-ruler-fortune.png" alt="Ruler of Fortune" class="poster">
+                            <p class="poster-title">Ruler of Fortune</p>
+                        </div>
+                        
+                    </div>
+                </section>
+                <button class="scroll-btn left" onclick="scrollContent('crime-shows-row', -1)"> &lt; </button>
+                <button class="scroll-btn right" onclick="scrollContent('crime-shows-row', 1)"> &gt; </button>
+            </div>
+            
+            <div class="category-wrapper">
+                <section class="category-row">
+                    <h2>Sports</h2>
+                    <div class="poster-container" id="sports-row"> 
+                        
+                        <div class="poster-item">
+                            <img src="./images/sport-1.png" alt="Game 1" class="poster">
+                            <p class="poster-title">Juventus vs Inter</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/sport-2.png" alt="Game 2" class="poster">
+                            <p class="poster-title">Manchester City vs Liverpool</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/sport-3.png" alt="Game 3" class="poster">
+                            <p class="poster-title">Real Madrid vs Barcelona</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/sport-4.png" alt="Game 4" class="poster">
+                            <p class="poster-title">Atletico Madrid vs Real Madrid</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/sport-5.jpg" alt="Game 5" class="poster">
+                            <p class="poster-title">Chelsea vs Barcelona</p>
+                        </div>
+                        <div class="poster-item">
+                            <img src="./images/sport-6.jpg" alt="Game 6" class="poster">
+                            <p class="poster-title">Arsenal vs Bayern Munich</p>
+                        </div>
+                    </div>
+                </section>
+                <button class="scroll-btn left" onclick="scrollContent('sports-row', -1)"> &lt; </button>
+                <button class="scroll-btn right" onclick="scrollContent('sports-row', 1)"> &gt; </button>
+            </div>
+            
+        </section> </main>
+      
+    <footer class="footer container">
+        <div class="links">
+            <a href ="#">About Us</a>
+            <a href="#">Audio and Subtitles</a>
+            <a href="#">Help Center</a>
+            <a href="#">Jobs</a>
+            <a href="#">Cookie Preferences</a>
+            <a href="#">Legal Notices</a>
+        </div>
+        <div class="copyright">© 2025 Metro Movies</div>
+    </footer>
+</body>
+</html>

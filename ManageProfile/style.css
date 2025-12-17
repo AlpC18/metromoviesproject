@@ -1,0 +1,101 @@
+    :root {
+      --bg: #141414;
+      --text: #fff;
+      --muted: #808080;
+      --hover: #e50914;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 40px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .profiles {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile {
+      text-align: center;
+      position: relative;
+    }
+
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 2px solid var(--muted);
+      transition: border 0.3s;
+    }
+
+    .profile:hover img {
+      border: 2px solid var(--hover);
+    }
+
+    .name {
+      margin-top: 8px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1px solid var(--muted);
+      color: var(--muted);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .add-profile {
+      background: var(--hover);
+      border: none;
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 4px;
+      margin-top: 40px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-profile:hover {
+      background: #b00610;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: var(--muted);
+      font-size: 13px;
+    }
