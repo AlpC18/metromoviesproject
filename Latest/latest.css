@@ -1,0 +1,71 @@
+.page-hero {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, var(--bg) 100%);
+    padding: 120px 0 60px;
+    text-align: left;
+}
+
+.page-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0 60px;
+}
+
+.grid-item {
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.grid-item-title {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.grid-item-meta {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.new-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #e50914;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 40px 0 20px;
+    color: #fff;
+}

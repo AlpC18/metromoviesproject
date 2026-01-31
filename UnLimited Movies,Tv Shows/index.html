@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="sq">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Metro Movies</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="overlay"></div>
 
   <header class="nav">
     <div class="logo">
-        <a href="/">
-            <img src="logo.png" alt="Metro Movies Logo" class="logo-img" />
-        </a>
+      <a href="/">
+        <img src="logo.png" alt="Metro Movies Logo" class="logo-img" />
+      </a>
     </div>
     <a href="../LoginForm/metromovies-loginform.html" class="btn btn-signin">Log In</a>
   </header>
@@ -23,17 +25,26 @@
     <p>Watch Anytime.Cancel it when do you want.</p>
     <p class="price">Starts with <strong>€4.99</strong> / month.</p>
 
-    <form class="cta">
-      <input type="email" placeholder="Email address" />
-      
-      <a href="..//SignupForm/signup.html" class="btn btn-primary">Get Started</a>
+    <form class="cta" id="emailForm">
+      <input type="email" id="emailInput" placeholder="Email address" required />
 
-      <a href="..//SignupForm/signup.html" class="btn btn-login">Sign Up</a>
+      <button type="submit" class="btn btn-primary">Get Started</button>
+
+      <a href="../SignupForm/signup.html" class="btn btn-login">Sign Up</a>
     </form>
+
+    <script>
+      document.getElementById('emailForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        window.location.href = `../SignupForm/signup.html${email ? '?email=' + encodeURIComponent(email) : ''}`;
+      });
+    </script>
   </main>
 
   <footer class="foot">
     <small></small>
   </footer>
 </body>
+
 </html>

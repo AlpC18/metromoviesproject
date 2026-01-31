@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Metro Movies</title>
+    <link rel="stylesheet" href="../Interface MainPage/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, var(--bg) 100%);
+            padding: 120px 0 60px;
+            text-align: left;
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-subtitle {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 12px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--chip);
+            border: 1px solid #444;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0 60px;
+        }
+
+        .grid-item {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .grid-item-title {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .grid-item-meta {
+            font-size: 12px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="logo">
+                <a href="../Interface MainPage/index.html">
+                    <img src="../Interface MainPage/images/logo.png" alt="Metro Movies Logo" class="site-logo">
+                </a>
+            </div>
+            <div class="brand">
+                <nav class="primary-nav">
+                    <a href="../Interface MainPage/index.html" class="nav-link">Home</a>
+                    <a href="../TVShows/tvshows.html" class="nav-link">TV Shows</a>
+                    <a href="movies.html" class="nav-link active">Movies</a>
+                    <a href="../Latest/latest.html" class="nav-link">Latest</a>
+                    <a href="../MyList/mylist.html" class="nav-link">My List</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="../Interface MainPage/index.html" class="icon-btn" title="Back to Home">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                        </svg>
+                    </a>
+                    <div class="profile-dropdown-wrapper">
+                        <button class="profile-trigger" aria-label="Profile Menu" title="Profile Menu">
+                            <img src="../Interface MainPage/images/Leonardo.jpeg" alt="User Profile"
+                                class="avatar-image">
+                            <span class="caret">▼</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-transition">
+        <section class="page-hero container">
+            <h1 class="page-title">Movies</h1>
+            <p class="page-subtitle">Discover blockbusters and hidden gems</p>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="crime">Crime</button>
+                <button class="filter-btn" data-filter="action">Action</button>
+                <button class="filter-btn" data-filter="drama">Drama</button>
+                <button class="filter-btn" data-filter="thriller">Thriller</button>
+                <button class="filter-btn" data-filter="scifi">Sci-Fi</button>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content-grid" id="movies-grid">
+
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-social-links">
+                <a href="#" class="social-link facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" class="social-link youtube" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none">
+                        </polygon>
+                    </svg>
+                </a>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Audio Description</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Legal Notices</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Corporate Information</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="service-code-wrapper">
+                <button class="service-code-btn">Service Code</button>
+            </div>
+            <div class="copyright-text">
+                © 2025 Metro Movies
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const movies = [
+            { title: "The Godfather", image: "../Interface MainPage/images/poster-the-god-father.jpg", year: 1972, genres: ["crime", "drama"] },
+            { title: "Scarface", image: "../Interface MainPage/images/poster-scarface.jpg", year: 1983, genres: ["crime", "drama", "thriller"] },
+            { title: "Bad Boys", image: "../Interface MainPage/images/posters-bad-boys.png", year: 2024, genres: ["action", "crime"] },
+            { title: "Frankenstein", image: "../Interface MainPage/images/poster-frankenstein.png", year: 2024, genres: ["drama", "thriller", "scifi"] },
+            { title: "Ruler of Fortune", image: "../Interface MainPage/images/posters-ruler-fortune.png", year: 2023, genres: ["thriller"] }
+        ];
+
+        const grid = document.getElementById('movies-grid');
+        let currentFilter = 'all';
+
+        function renderMovies(filter = 'all') {
+            const filtered = filter === 'all'
+                ? movies
+                : movies.filter(movie => movie.genres.includes(filter));
+
+            grid.innerHTML = filtered.map(movie => `
+                <div class="grid-item" data-title="${movie.title}">
+                    <img src="${movie.image}" alt="${movie.title}" loading="lazy">
+                    <div class="grid-item-title">${movie.title}</div>
+                    <div class="grid-item-meta">${movie.year} • Movie</div>
+                </div>
+            `).join('');
+        }
+
+        // Initial render
+        renderMovies();
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderMovies(currentFilter);
+            });
+        });
+
+        // Click to view details
+        grid.addEventListener('click', (e) => {
+            const item = e.target.closest('.grid-item');
+            if (item) {
+                const title = item.dataset.title;
+                window.location.href = `../Interface MainPage/index.html?show=${encodeURIComponent(title)}`;
+            }
+        });
+    </script>
+</body>
+
+</html>

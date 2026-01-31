@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metro Movies - Login</title> 
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Movies - Login</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body>
     <div class="nf-container">
-    
+
         <div class="nf-image-header">
             <img src="logo.png" alt="Metro Movies Logo" class="form-header-img">
         </div>
-        
+
         <h2>Log In</h2>
         <p>Log in with email and password.</p>
 
-        <form id="loginForm"> 
-            
+        <form id="loginForm">
+
             <div class="field">
                 <div class="input-wrap">
-                    <input type="email" id="email" placeholder="Email address" required>
+                    <input type="email" id="email" name="email" placeholder="Email address" required>
                 </div>
                 <div id="emailError" class="msg error" style="display:none;"></div>
             </div>
 
             <div class="field">
-                <div class="input-wrap password-container"> <input type="password" id="password" placeholder="Password" required autocomplete="new-password"> <span class="toggle-password" id="hidePasswordIcon">
-                        <img src="eye-close.png" alt="Hide Password" class="password-icon"> </span>
+                <div class="input-wrap password-container">
+                    <input type="password" id="password" name="password" placeholder="Password" required
+                        autocomplete="new-password">
+
+                    <span class="toggle-password" id="hidePasswordIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                            <path
+                                d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                        </svg>
+                    </span>
 
                     <span class="toggle-password hidden" id="showPasswordIcon">
-                       <img src="eye-open.png" alt="Show Password" class="password-icon"> </span>
-                    
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z" />
+                            <path
+                                d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z" />
+                            <path
+                                d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z" />
+                        </svg>
+                    </span>
                 </div>
                 <div id="passwordError" class="msg error" style="display:none;"></div>
             </div>
@@ -40,16 +63,29 @@
                 <label><input type="checkbox" id="remember"> Remember me</label>
                 <a href="#" style="color:var(--muted);text-decoration:none;">Forgot Password</a>
             </div>
-            
-            <button type="submit" class="nf-btn">Log In</button>
-            
-            <div class="form-footer-link">
-                <p>Don't have an account? <a href="../SignupForm/signup.html">Sign Up here</a></p> 
+
+
+            <div class="recaptcha-container">
+                <div class="g-recaptcha" data-theme="dark" data-sitekey="6LePllssAAAAAOXU7QZmJaXA0AZ0-mbdcyn5cdSD">
+                </div>
+                <div id="recaptchaError" class="msg error" style="display:none;">Please verify you're not a robot.</div>
             </div>
-            
-            <footer>© 2025 Metro Movie</footer>
+
+            <button type="submit" class="nf-btn">Log In</button>
+
+            <div class="form-footer-link">
+                <p>Don't have an account? <a href="../SignupForm/signup.html">Sign Up here</a></p>
+            </div>
+
+            <footer>© 2026 Metro Movies</footer>
         </form>
     </div>
-  <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="../js/supabase-config.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

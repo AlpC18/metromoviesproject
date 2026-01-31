@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest - Metro Movies</title>
+    <link rel="stylesheet" href="../Interface MainPage/style.css">
+    <link rel="stylesheet" href="latest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <div class="logo">
+                <a href="../Interface MainPage/index.html">
+                    <img src="../Interface MainPage/images/logo.png" alt="Metro Movies Logo" class="site-logo">
+                </a>
+            </div>
+            <div class="brand">
+                <nav class="primary-nav">
+                    <a href="../Interface MainPage/index.html" class="nav-link">Home</a>
+                    <a href="../TVShows/tvshows.html" class="nav-link">TV Shows</a>
+                    <a href="../Movies/movies.html" class="nav-link">Movies</a>
+                    <a href="latest.html" class="nav-link active">Latest</a>
+                    <a href="../MyList/mylist.html" class="nav-link">My List</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="../Interface MainPage/index.html" class="icon-btn" title="Back to Home">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                        </svg>
+                    </a>
+                    <div class="profile-dropdown-wrapper">
+                        <button class="profile-trigger" aria-label="Profile Menu" title="Profile Menu">
+                            <img src="../Interface MainPage/images/Leonardo.jpeg" alt="User Profile"
+                                class="avatar-image">
+                            <span class="caret">▼</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-transition">
+        <section class="page-hero container">
+            <h1 class="page-title">New & Popular</h1>
+            <p class="page-subtitle">The latest releases and trending content</p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">🔥 New This Week</h2>
+            <div class="content-grid" id="new-this-week">
+
+            </div>
+
+            <h2 class="section-title">📈 Trending Now</h2>
+            <div class="content-grid" id="trending-now">
+
+            </div>
+
+            <h2 class="section-title">🎬 Coming Soon</h2>
+            <div class="content-grid" id="coming-soon">
+
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-social-links">
+                <a href="#" class="social-link facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" class="social-link youtube" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none">
+                        </polygon>
+                    </svg>
+                </a>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Audio Description</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Legal Notices</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Corporate Information</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="service-code-wrapper">
+                <button class="service-code-btn">Service Code</button>
+            </div>
+            <div class="copyright-text">
+                © 2025 Metro Movies
+            </div>
+        </div>
+    </footer>
+
+    <script src="latest.js"></script>
+</body>
+
+</html>
