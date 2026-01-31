@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metro Movies</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../MoreInfo/moreinfo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script> 
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    
+
     <header class="site-header">
         <div class="container nav">
-            
+
             <div class="logo">
                 <a href="#">
                     <img src="images/logo.png" alt="PrimeStream Logo" class="site-logo">
@@ -23,69 +26,152 @@
             <div class="brand">
                 <nav class="primary-nav">
                     <a href="#" class="nav-link active">Home</a>
-                    <a href="#" class="nav-link">TV Shows</a>
-                    <a href="#" class="nav-link">Movies</a>
-                    <a href="#" class="nav-link">Latest</a>
-                    <a href="#" class="nav-link">My List</a>
+                    <a href="../TVShows/tvshows.html" class="nav-link">TV Shows</a>
+                    <a href="../Movies/movies.html" class="nav-link">Movies</a>
+                    <a href="../Latest/latest.html" class="nav-link">Latest</a>
+                    <a href="../MyList/mylist.html" class="nav-link">My List</a>
                 </nav>
                 <div class="nav-actions">
-                    <button class="icon-btn" aria-label="Search" title="Search">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                        </svg>
-                    </button>
-                    <button class="icon-btn" aria-label="Notifications" title="Notifications">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
-                            <path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2z"></path>
-                        </svg>
-                    </button>
-                    
-                  <a href="../WhosWatching /profile.html" class="profile-link" aria-label="My Profile" title="My Profile">
-                        <img src="images/Leonardo.jpeg" alt="User Profile Image" class="avatar-image">
-                    </a>
+
+                    <div class="search-wrapper" id="search-wrapper">
+                        <input type="text" class="search-input" id="search-input" placeholder="TV, SHOWS, MOVIES">
+                        <button class="icon-btn search-toggle" id="search-toggle" aria-label="Search" title="Search">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="search-results" id="search-results">
+
+                        </div>
+                    </div>
+
+                    <div class="notifications-wrapper" id="notifications-wrapper">
+                        <button class="icon-btn notifications-toggle" id="notifications-toggle"
+                            aria-label="Notifications" title="Notifications">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1l-2-2z">
+                                </path>
+                            </svg>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="notifications-dropdown" id="notifications-dropdown">
+                            <div class="notifications-header">
+                                <h4>Notifications</h4>
+                            </div>
+                            <div class="notifications-list" id="notifications-list">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-dropdown-wrapper">
+                        <button class="profile-trigger" aria-label="Profile Menu" title="Profile Menu">
+                            <img src="images/Leonardo.jpeg" alt="User Profile Image" class="avatar-image">
+                            <span class="caret">▼</span>
+                        </button>
+                        <div class="profile-dropdown" id="profile-dropdown">
+                            <div class="dropdown-arrow"></div>
+                            <div class="profile-list">
+                                <a href="#" class="profile-option" data-profile="Thomas">
+                                    <img src="../WhosWatching/Peaky Blinders.jpeg" alt="Thomas">
+                                    <span>Thomas</span>
+                                </a>
+                                <a href="#" class="profile-option" data-profile="Leonardo">
+                                    <img src="images/Leonardo.jpeg" alt="Leonardo">
+                                    <span>Leonardo</span>
+                                </a>
+                                <a href="#" class="profile-option" data-profile="CR7">
+                                    <img src="../WhosWatching/Cr7.jpeg" alt="CR7">
+                                    <span>CR7</span>
+                                </a>
+                                <a href="#" class="profile-option" data-profile="Mystery">
+                                    <img src="../WhosWatching/_.jpeg" alt="Mystery">
+                                    <span>Mystery</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-actions">
+                                <a href="../ManageProfile/manageprofile.html" class="dropdown-action">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 20h9" />
+                                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                                    </svg>
+                                    <span>Manage Profiles</span>
+                                </a>
+                                <a href="#" class="dropdown-action">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                    <span>Account</span>
+                                </a>
+                                <a href="#" class="dropdown-action">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                                    </svg>
+                                    <span>Help Center</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="../UnLimited Movies,Tv Shows/index.html" class="dropdown-action sign-out">
+                                Sign out of Metro Movies
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <section class="hero">
-            <div class="hero-media"></div>
-            <div class="container hero-content">
-                <h1 class="hero-logo">Frankenstein</h1> <p class="hero-tagline">I'm Captain Anderson. This is Dr. Udsen.</p>
-                <div class="hero-actions">
-                    <button class="btn btn-primary">
-                        <span class="btn-icon">▶</span>
-                        Play
-                    </button>
-                    <button class="btn btn-secondary">
-                        <span class="btn-icon">ℹ</span>
-                        More Info
-                    </button>
-                </div>
-                <div class="hero-meta">
-                    <span class="chip">16+</span>
-                    <span class="chip">HD</span>
-                    <span class="chip">5.1</span>
-                </div>
+        <section class="hero" id="hero-carousel">
+            <div class="hero-slides" id="hero-slides">
+                <!-- Slides injected via JS -->
+            </div>
+
+            <button class="icon-btn hero-audio-toggle" id="audio-toggle" aria-label="Toggle Audio">
+                <svg id="audio-icon-muted" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path
+                        d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z">
+                    </path>
+                </svg>
+                <svg id="audio-icon-unmuted" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                    style="display: none;">
+                    <path
+                        d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z">
+                    </path>
+                </svg>
+            </button>
+
+            <div class="hero-indicators" id="hero-indicators">
+                <!-- Indicators injected via JS -->
             </div>
             <div class="hero-fade"></div>
         </section>
 
         <section class="content-rows">
-            
+
             <div class="category-wrapper">
                 <section class="category-row">
                     <h2>We Think You'll Love These</h2>
                     <div class="poster-container" id="love-these-row">
-                        
+
                         <div class="poster-item">
                             <img src="./images/poster-stranger-things.png" alt="Stranger Things" class="poster">
                             <p class="poster-title">Stranger Things</p>
                         </div>
-                        <div class="poster-item">
-                            <img src="./images/poster-how-i-met-your-mother.png" alt="Stranger Things" class="poster">
+                        <div class="poster-item" id="himym-card">
+                            <img src="./images/poster-how-i-met-your-mother.png" alt="How I Met Your Mother"
+                                class="poster">
                             <p class="poster-title">How I Met Your Mother</p>
-                            </div>
+                        </div>
                         <div class="poster-item">
                             <img src="./images/posters-rookie.png" alt="Rookie" class="poster">
                             <p class="poster-title">The Rookie</p>
@@ -111,12 +197,75 @@
                 <button class="scroll-btn left" onclick="scrollContent('love-these-row', -1)"> &lt; </button>
                 <button class="scroll-btn right" onclick="scrollContent('love-these-row', 1)"> &gt; </button>
             </div>
-            
+
+            <!-- Top 10 Section -->
+            <div class="category-wrapper">
+                <section class="category-row">
+                    <h2>Top 10 in The Kosovo Today</h2>
+                    <div class="poster-container top-10-row" id="top-10-row">
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">1</span>
+                            <img src="./images/poster-stranger-things.png" alt="Stranger Things"
+                                class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Stranger Things</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">2</span>
+                            <img src="./images/posters-wednesday.png" alt="Wednesday" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Wednesday</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">3</span>
+                            <img src="./images/poster-peaky-blinders.png" alt="Peaky Blinders"
+                                class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Peaky Blinders</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">4</span>
+                            <img src="./images/poster-snowfall.png" alt="Snowfall" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Snowfall</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">5</span>
+                            <img src="./images/poster-money-heist.png" alt="Money Heist" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Money Heist</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">6</span>
+                            <img src="./images/poster-breaking-bad.png" alt="Breaking Bad" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Breaking Bad</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">7</span>
+                            <img src="./images/poster-dexter.png" alt="Dexter" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Dexter</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">8</span>
+                            <img src="./images/poster-lupin.png" alt="Lupin" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Lupin</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">9</span>
+                            <img src="./images/poster-friends.jpg" alt="Friends" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Friends</p>
+                        </div>
+                        <div class="poster-item top-10-item">
+                            <span class="rank-number">10</span>
+                            <img src="./images/poster-scarface.jpg" alt="Scarface" class="poster top-10-poster">
+                            <p class="poster-title" style="display:none">Scarface</p>
+                        </div>
+                    </div>
+                </section>
+                <button class="scroll-btn left" onclick="scrollContent('top-10-row', -1)"> &lt; </button>
+                <button class="scroll-btn right" onclick="scrollContent('top-10-row', 1)"> &gt; </button>
+            </div>
+
             <div class="category-wrapper">
                 <section class="category-row">
                     <h2>Your Next to Watch</h2>
-                     <div class="poster-container" id="next-watch-row">
-                        
+                    <div class="poster-container" id="next-watch-row">
+
                         <div class="poster-item">
                             <img src="./images/poster-dexter.png" alt="Dexter" class="poster">
                             <p class="poster-title">Dexter</p>
@@ -128,7 +277,7 @@
                         <div class="poster-item">
                             <img src="./images/poster-friends.jpg" alt="Young Sheldon" class="poster">
                             <p class="poster-title">Friends</p>
-                            </div>
+                        </div>
                         <div class="poster-item">
                             <img src="./images/poster-young-sheldon.png" alt="Young Sheldon" class="poster">
                             <p class="poster-title">Young Sheldon</p>
@@ -155,7 +304,7 @@
                 <section class="category-row">
                     <h2>Crime TV Shows/Movies</h2>
                     <div class="poster-container" id="crime-shows-row">
-                        
+
                         <div class="poster-item">
                             <img src="./images/poster-snowfall.png" alt="Snowfall" class="poster">
                             <p class="poster-title">Snowfall</p>
@@ -188,18 +337,18 @@
                             <img src="./images/posters-ruler-fortune.png" alt="Ruler of Fortune" class="poster">
                             <p class="poster-title">Ruler of Fortune</p>
                         </div>
-                        
+
                     </div>
                 </section>
                 <button class="scroll-btn left" onclick="scrollContent('crime-shows-row', -1)"> &lt; </button>
                 <button class="scroll-btn right" onclick="scrollContent('crime-shows-row', 1)"> &gt; </button>
             </div>
-            
+
             <div class="category-wrapper">
                 <section class="category-row">
                     <h2>Sports</h2>
-                    <div class="poster-container" id="sports-row"> 
-                        
+                    <div class="poster-container" id="sports-row">
+
                         <div class="poster-item">
                             <img src="./images/sport-1.png" alt="Game 1" class="poster">
                             <p class="poster-title">Juventus vs Inter</p>
@@ -229,19 +378,150 @@
                 <button class="scroll-btn left" onclick="scrollContent('sports-row', -1)"> &lt; </button>
                 <button class="scroll-btn right" onclick="scrollContent('sports-row', 1)"> &gt; </button>
             </div>
-            
-        </section> </main>
-      
-    <footer class="footer container">
-        <div class="links">
-            <a href ="#">About Us</a>
-            <a href="#">Audio and Subtitles</a>
-            <a href="#">Help Center</a>
-            <a href="#">Jobs</a>
-            <a href="#">Cookie Preferences</a>
-            <a href="#">Legal Notices</a>
+
+        </section>
+    </main>
+
+
+
+
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="video-container">
+                <iframe id="video-frame" width="100%" height="100%" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
         </div>
-        <div class="copyright">© 2025 Metro Movies</div>
+    </div>
+
+
+    <div id="hover-card" class="hover-card">
+        <div class="hover-video-container">
+            <iframe id="hover-video-frame" src="" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            <div class="hover-volume-control">
+                <div class="volume-icon" id="volume-icon-svg">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path
+                            d="M3.63 3.63a.996.996 0 000 1.41L7.29 8.7 7 9H4v6h3l5 5v-2.33l4.22 4.22a.996.996 0 101.41-1.41L3.63 3.63zM10 16.51l-4.21-4.21L5 11.79V10h1.79l3.21 3.21v3.3zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="hover-content">
+            <div class="hover-controls">
+                <div class="left-controls">
+                    <button class="hover-btn play-btn" id="hover-play-btn" title="Play">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+                    <button class="hover-btn icon-only" id="hover-add-btn" title="Add to My List">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                    <button class="hover-btn icon-only" id="hover-like-btn" title="I Like This">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="right-controls">
+                    <button class="hover-btn icon-only" id="hover-more-btn" title="More Info">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="hover-info">
+                <h4 id="hover-title">Title</h4>
+                <div class="hover-meta">
+                    <span class="match-score">98% Match</span>
+                    <span class="age-rating">16+</span>
+                    <span class="duration">1h 45m</span>
+                    <span class="quality">HD</span>
+                </div>
+                <div class="hover-genres">
+                    <span>Sleek</span> • <span>Dark</span> • <span>Action</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="more-info-container"></div>
+    <script>
+        fetch('../MoreInfo/moreinfo.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('more-info-container').innerHTML = html;
+                const script = document.createElement('script');
+                script.src = '../MoreInfo/moreinfo.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error('Error loading More Info component:', error));
+    </script>
+
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-social-links">
+                <a href="#" class="social-link facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" class="social-link youtube" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none">
+                        </polygon>
+                    </svg>
+                </a>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Audio Description</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Legal Notices</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+                <li><a href="#">Corporate Information</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="service-code-wrapper">
+                <button class="service-code-btn">Service Code</button>
+            </div>
+            <div class="copyright-text">
+                © 2026 Metro Movies
+            </div>
+        </div>
     </footer>
 </body>
+
 </html>
