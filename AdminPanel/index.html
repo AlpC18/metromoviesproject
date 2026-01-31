@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Movies - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <header>
+            <div class="logo-section">
+                <img src="logo.png" alt="Metro Movies Logo" class="admin-logo">
+            </div>
+            <div class="user-info" style="position: relative;">
+                <img src="../Interface MainPage/images/Leonardo.jpeg" id="profileTrigger"
+                    style="width:36px; height:36px; border-radius:50%; border:2px solid #333; cursor: pointer;"
+                    alt="Admin" onclick="toggleProfileMenu()">
+
+                <div id="profileDropdown" class="profile-dropdown">
+                    <div class="dropdown-item">Account Settings</div>
+                    <div class="dropdown-item">Help Center</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item text-red" onclick="window.location.href='../index.html'">Sign Out</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="actions-bar">
+            <div>
+                <h2 style="font-weight: 600;">Content Management</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Manage all your movies and shows</p>
+            </div>
+            <button class="btn-primary" onclick="toggleForm()">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Add New Movie
+            </button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Details</th>
+                        <th>Category</th>
+                        <th>Year</th>
+                        <th>Duration</th>
+                        <th style="text-align: right;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="moviesTableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div id="addMovieForm">
+        <div class="modal-content">
+            <h2 id="formTitle">Add New Content from library</h2>
+
+            <input type="hidden" id="movieId">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="title" class="form-input" placeholder="e.g. Inception">
+                </div>
+                <div class="form-group">
+                    <label>Tagline (for Hero)</label>
+                    <input type="text" id="tagline" class="form-input" placeholder="The biggest heist...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="description" class="form-input" placeholder="Synopsis..."></textarea>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>Poster Image (Upload)</label>
+                    <input type="file" id="poster_file" class="form-input" accept="image/*">
+                    <input type="hidden" id="poster_url">
+                </div>
+                <div class="form-group">
+                    <label>YouTube Link (Main/Full)</label>
+                    <input type="text" id="video_url_input" class="form-input"
+                        placeholder="https://www.youtube.com/watch?v=...">
+                    <input type="hidden" id="video_id" class="form-input">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Preview Video (Hover) - Optional</label>
+                <input type="text" id="preview_video_input" class="form-input"
+                    placeholder="YouTube Link for Hover Preview">
+                <input type="hidden" id="preview_video_id">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>Category</label>
+                    <input type="text" id="category" class="form-input" placeholder="Action">
+                </div>
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="number" id="release_year" class="form-input" value="2025">
+                </div>
+                <div class="form-group">
+                    <label>Duration</label>
+                    <input type="text" id="duration" class="form-input" placeholder="1h 50m">
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="type" class="form-input">
+                        <option value="Movie">Movie</option>
+                        <option value="TV Series">TV Series</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>Rating</label>
+                    <input type="text" id="rating" class="form-input" placeholder="16+">
+                </div>
+                <div class="form-group">
+                    <label>Quality</label>
+                    <input type="text" id="quality" class="form-input" placeholder="4K">
+                </div>
+                <div class="form-group">
+                    <label>IMDB Score</label>
+                    <input type="text" id="imdb" class="form-input" placeholder="8.5">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Cast (comma separated)</label>
+                <input type="text" id="cast" class="form-input" placeholder="Actor 1, Actor 2">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>Genres</label>
+                    <input type="text" id="genres" class="form-input" placeholder="Sci-Fi, Drama">
+                </div>
+                <div class="form-group">
+                    <label>Moods</label>
+                    <input type="text" id="moods" class="form-input" placeholder="Suspenseful, Exciting">
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                    <label>Warnings</label>
+                    <input type="text" id="warnings" class="form-input" placeholder="Violence, Language">
+                </div>
+                <div class="form-group">
+                    <label>Seasons (if TV)</label>
+                    <input type="number" id="seasons" class="form-input" value="0">
+                </div>
+            </div>
+
+            <!-- Dynamic Episodes Section -->
+            <div id="episodes-section" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <label style="font-weight: 600; color: #fff;">Episodes / Clips</label>
+                    <button type="button" class="btn-secondary" style="padding: 5px 10px; font-size: 0.8rem;"
+                        onclick="addEpisodeField()">+ Add Episode</button>
+                </div>
+                <div id="episodes-list" style="display: flex; flex-direction: column; gap: 10px;">
+                    <!-- Episode rows will be added here -->
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-secondary" onclick="toggleForm()">Cancel</button>
+                <button class="btn-primary" onclick="saveMovie()">Save Content</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Update render function to match new design
+        function renderMovies(movies) {
+            const tbody = document.getElementById('moviesTableBody');
+            tbody.innerHTML = '';
+
+            if (movies.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:3rem; color: #666;">No movies found. Start adding some!</td></tr>';
+                return;
+            }
+
+            movies.forEach(movie => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${movie.poster_url}" class="movie-poster" onerror="this.src='https://via.placeholder.com/60x90?text=No+Img'">
+                            <div>
+                                <div class="movie-title">${movie.title}</div>
+                                <div class="movie-meta">ID: ${movie.id}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-cat">${movie.category}</span></td>
+                    <td style="color: var(--text-muted);">${movie.release_year}</td>
+                    <td style="color: var(--text-muted);">${movie.duration}</td>
+                    <td>
+                        <div class="action-btns" style="justify-content: flex-end;">
+                            <button class="btn-icon btn-edit" title="Edit" onclick='editMovie(${JSON.stringify(movie)})'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                            </button>
+                            <button class="btn-icon btn-delete" title="Delete" onclick="deleteMovie(${movie.id})">
+                                <!-- Explicit Trash Can Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Ensure Modal Flex works
+        const modal = document.getElementById('addMovieForm');
+        // Override the simple display toggle to use flex for centering
+        const _originalToggle = toggleForm;
+        toggleForm = function () {
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+                clearForm();
+            }
+        }
+
+        const _editMovie = editMovie;
+        editMovie = function (movie) {
+            modal.style.display = 'flex';
+            document.getElementById('formTitle').textContent = 'Edit Content';
+
+            document.getElementById('movieId').value = movie.id || '';
+            document.getElementById('title').value = movie.title || '';
+            document.getElementById('tagline').value = movie.tagline || '';
+            document.getElementById('description').value = movie.description || '';
+            document.getElementById('poster_url').value = movie.poster_url || '';
+
+            const vId = movie.video_id || '';
+            document.getElementById('video_id').value = vId;
+            document.getElementById('video_url_input').value = vId ? `https://www.youtube.com/watch?v=${vId}` : '';
+
+            document.getElementById('category').value = movie.category || '';
+            document.getElementById('release_year').value = movie.release_year || '2025';
+            document.getElementById('duration').value = movie.duration || '';
+            document.getElementById('type').value = movie.type || 'Movie';
+            document.getElementById('rating').value = movie.rating || '16+';
+            document.getElementById('quality').value = movie.quality || 'HD';
+            document.getElementById('imdb').value = movie.imdb || '';
+            document.getElementById('cast').value = movie.cast || '';
+            document.getElementById('genres').value = movie.genres || '';
+            document.getElementById('moods').value = movie.moods || '';
+            document.getElementById('warnings').value = movie.warnings || '';
+            document.getElementById('seasons').value = movie.seasons || '0';
+        }
+
+        // Profile Menu Toggle
+        function toggleProfileMenu() {
+            const dropdown = document.getElementById('profileDropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('profileDropdown');
+            const trigger = document.getElementById('profileTrigger');
+
+            if (dropdown.classList.contains('active') &&
+                !dropdown.contains(event.target) &&
+                !trigger.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
